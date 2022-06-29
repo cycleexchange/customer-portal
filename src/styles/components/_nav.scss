@@ -1,0 +1,27 @@
+.nav__container {
+    width: $app-width;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    padding: 1.3em 0;
+    background-color: #ffffffec;
+    user-select: none;
+
+    .links {
+        display: flex;
+        flex-direction: column;
+
+        .body__text {
+            font-size: calc($fs-body - 0.35rem);
+        }
+    }
+
+    .img__wrap {
+        width: clamp(100px, 20%, 250px)
+    }
+
+    img {
+        width: clamp(130px, 100%, 250px);
+    }
+}

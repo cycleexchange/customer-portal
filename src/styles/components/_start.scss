@@ -1,0 +1,49 @@
+.start__container {
+    margin: $body-top;
+    margin-bottom: 6em;
+    width: $body-width;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .head__text {
+        font-size: $fs-body-large;
+        margin: 0 0 2em 0;
+
+        &--red {
+            font-size: calc($fs-body-large + 0.8rem);
+            color: $main-red;
+            margin: 0 0 6px 0;
+        }
+    }
+
+    .body__text {
+
+        &--red {
+            color: $main-red;
+        }
+    }
+
+    .quote__wrap {
+        margin: 2em 0;
+        display: flex;
+
+        .quote {
+            margin: 0 2em;
+            
+            p {
+                font-size: calc($fs-body - 0.2rem);
+            }
+        }
+    }
+
+    .button__wrap {
+        height: clamp(110px, 7em, 160px);
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}

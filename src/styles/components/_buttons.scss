@@ -1,0 +1,51 @@
+//MUI style override
+
+#large-button {
+    font-family: RzaRegular, sans-serif;
+    font-size: calc($fs-button + 0.2rem);
+    text-transform: none;
+    letter-spacing: normal;
+    background-color: $main-red;
+    color: white;
+    width: clamp(200px, 20vw, 280px);
+    height: 2.5em;
+    border-radius: 10px;
+}
+
+#med-button--red {
+    font-family: RzaRegular, sans-serif;
+    font-size: calc($fs-button);
+    text-transform: none;
+    letter-spacing: normal;
+    background-color: #FF575F;
+    color: white;
+    width: clamp(5em, 6vw, 14em);
+    height: 2.5em;
+    border-radius: 10px;
+
+    &--disabled {
+        font-family: RzaRegular, sans-serif;
+        font-size: calc($fs-button);
+        text-transform: none;
+        letter-spacing: normal;
+        background-color: #ff575f7d;
+        color: white;
+        width: clamp(5em, 6vw, 14em);
+        height: 2.5em;
+        border-radius: 10px;
+    }
+}
+
+#med-button--white {
+    font-family: RzaRegular, sans-serif;
+    font-size: calc($fs-button);
+    text-transform: none;
+    letter-spacing: normal;
+    background-color: white;
+    color: black;
+    border: solid 2px $main-red;
+    width: clamp(5em, 6vw, 14em);
+    height: 2.5em;
+    border-radius: 10px;
+}
+

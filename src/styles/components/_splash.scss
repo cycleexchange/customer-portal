@@ -1,0 +1,14 @@
+.splash__container {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .splash__img {
+        width: clamp(200px, 30%, 500px);
+        display: flex;
+        justify-content: center;
+    }
+}

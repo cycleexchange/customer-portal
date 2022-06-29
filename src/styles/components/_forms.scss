@@ -1,0 +1,166 @@
+.form__container {
+    margin: $body-top;
+    width: $app-width;
+
+    @media (max-width: 600px) {
+        margin: 5em 0 0 0;;
+    }
+
+    .form__step {
+        font-size: calc($fs-body + 0.2em);
+
+        p {
+            margin: 0;
+            color: $main-red;
+            text-align: center;
+        }
+    }
+
+    .form__window {
+        width: $app-width;
+        margin: 2.2em 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        select {
+            width: fit-content;
+            padding: 0.7em 0.7em 0.7em 0;
+            margin: clamp(4em, 5vw, 10em) 0px;
+            border: none;
+            border-bottom: solid 2px black;
+            font-family: HafferRegular, sans-serif;
+            font-size: $fs-body;
+            cursor: pointer;
+        }
+
+        .question__wrap {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            &--hidden {
+                display: flex;
+                flex-direction: column;
+            }
+
+            p,
+            label {
+                margin: 1em 0;
+            }
+
+            &--terms {
+                display: flex;
+                flex-direction: column;
+                overflow-y: scroll;
+                padding: 0 0 10em 0;
+
+                p {
+                    margin: 1em 2em 2em 0;
+                }
+            }
+        }
+
+        .button__wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: $app-width;
+            bottom: 0;
+            background-color: white;
+            padding: 1em 0 clamp(70px, 13vh, 250px) 0;
+            user-select: none;
+
+            &--question {
+                width: 14em;
+                margin: 0.7em 0 1.1em 0;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            &--caption {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                p {
+                    margin: 0 0 1em 0;
+                    font-size: calc($fs-body - 0.3rem);
+                    position: absolute;
+                    transform: translateY(-2em);
+                }
+            }
+        }
+
+        .large-input,
+        .med-input {
+            height: 2.5em;
+            margin: 0 0 0.5em 0;
+            padding: 0 0 0.2em 0;
+            border: none;
+            border-bottom: 2px solid black;
+            font-size: calc($fs-body + 0.2rem);
+
+            &:focus {
+                outline: none
+            }
+        }
+
+        .large-input {
+            width: 12em;
+        }
+
+        .med-input {
+            width: 7em;
+        }
+
+        .checkbox__wrap {
+            width: fit-content;
+            border: solid 2px #ffffff00;
+            border-radius: 10px;
+            padding: 0 1em;
+            margin: 0 0 1.5em 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border 0.03s;
+
+            &:hover {
+                border: solid 2px $main-red;
+            }
+
+            label {
+                cursor: pointer;
+                user-select: none;
+                display: flex;
+                align-items: center;
+                margin: 0.8em 0;
+                font-size: calc($fs-body - 0.1rem);
+
+                &::before {
+                    content: "";
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    border: solid 2px $main-red;
+                    border-radius: 5px;
+                    background-color: white;
+                    margin: 0 10px 0 0;
+                }
+            }
+
+            input {
+                opacity: 0;
+                position: absolute;
+                cursor: pointer;
+
+                &[type="checkbox"]:checked+label::before {
+                    background-color: $main-red;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
