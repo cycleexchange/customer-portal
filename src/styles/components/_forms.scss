@@ -72,6 +72,10 @@
             padding: 1em 0 clamp(70px, 13vh, 250px) 0;
             user-select: none;
 
+            @media (max-width: 400px) {
+                padding: 1em 0 clamp(30px, 8vh, 250px) 0;
+            }
+
             &--question {
                 width: 14em;
                 margin: 0.7em 0 1.1em 0;
@@ -166,6 +170,10 @@
                     justify-content: center;
                 }
             }
+        }
+
+        .calendly__wrap {
+            margin: 2em 0;
         }
     }
 }

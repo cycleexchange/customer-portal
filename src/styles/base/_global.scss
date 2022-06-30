@@ -9,6 +9,10 @@ $body-top: 8em 0 0 0;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    &:focus {
+        outline: 1px dashed $main-red;
+    }
 }
 
 ::selection {

@@ -61,7 +61,7 @@ function loadCustomer(req) {
 }
 
 
-function updateCustomer(req, res) {
+function updateCustomerCollection(req, res) {
   base(TABLE_ID).find(req.params.id,
     (err, record) => {
       if (err) { console.error(err); return; }
@@ -72,8 +72,6 @@ function updateCustomer(req, res) {
       postcodes.forEach(e => { if (postcode.includes(e)) { matchingPostcode = true } })
 
       if (productType === "Full Bike" && matchingPostcode) {
-        console.log("yep")
-
         base(TABLE_ID).update([{
           "id": req.params.id,
           "fields": { "Status": "Accepted (Flamme Rouge)" }
@@ -84,8 +82,6 @@ function updateCustomer(req, res) {
         )
       } 
       else {
-        console.log("nah")
-
         base(TABLE_ID).update([{
           "id": req.params.id,
           "fields": { "Status": "Accepted (Post)" }
@@ -98,6 +94,7 @@ function updateCustomer(req, res) {
       base(TABLE_ID).update([{
         "id": req.params.id,
         "fields": {
+          "Drop Off/Collection" : "Collection", 
           "Email": req.body.email,
           "Customer Collection Address": req.body.address,
           "Customer Collection Town": req.body.town,
@@ -109,4 +106,4 @@ function updateCustomer(req, res) {
 }
 
 
-module.exports = { product, customer, loadProduct, loadCustomer, updateCustomer }
+module.exports = { product, customer, loadProduct, loadCustomer, updateCustomerCollection }

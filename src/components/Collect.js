@@ -55,7 +55,10 @@ export default function Collect() {
                     <p>We need a bit more information before sorting your collection.</p>
                     <p>Fill in the short form below and we'll send a confirmation email with the details.</p>
                     <div className="form__window">
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={(e) => {
+                            setFormStep(formStep + 1)
+                            handleSubmit(e)
+                        }}>
                             <CollectForm
                                 fadeAnimation={fadeIn}
                                 customerName={customerData.name}
@@ -79,7 +82,7 @@ export default function Collect() {
                                     {formStep < 4 ? <Button id="med-button--red" type="button" onClick={() => setFormStep(formStep + 1)}>Next</Button> : null}
                                     {formStep === 4 ?
                                         formInput.address && formInput.phone ?
-                                            <Button id="med-button--red" type="submit" onClick={() => setFormStep(formStep + 1)}>Submit</Button>
+                                            <Button id="med-button--red" type="submit">Submit</Button>
                                             : <Button disabled id="med-button--red--disabled" type="submit">Submit</Button>
                                         : null}
                                 </div>

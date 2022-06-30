@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: fixed;
 
     .splash__img {
         width: clamp(200px, 30%, 500px);

@@ -7,7 +7,7 @@ import ScheduleFlammeRouge from './ScheduleFlammeRouge.js'
 export default function Schedule({ fadeAnimation, location }) {
 
   const calendlyEmbedStyles = {
-    height: "1200px"
+    height: "1100px"
 }
 
   switch (location) {

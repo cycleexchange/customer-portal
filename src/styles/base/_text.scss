@@ -20,6 +20,10 @@ input {
     font-size: $fs-body;
 }
 
+p {
+    line-height: 1.5em;
+}
+
 h2,
 button,
 .form__step p {
@@ -30,6 +34,10 @@ button,
 a {
     text-decoration: none;
     color: inherit;
+
+    &:hover {
+        color: $main-red;
+    }
 }
 
 .body__text {

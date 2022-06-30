@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const { product, customer, loadProduct, loadCustomer, updateCustomer } = require('./modules/controller.js');
+const { product, customer, loadProduct, loadCustomer, updateCustomerCollection } = require('./modules/controller.js');
 
 require('dotenv').config();
 
@@ -28,7 +28,7 @@ app.get("/customerdata/:id", (req, res) => {
 })
 
 app.post("/:id/collect", (req, res) => {
-    updateCustomer(req)
+    updateCustomerCollection(req)
     res.status(200).send(customer)
 })
 
