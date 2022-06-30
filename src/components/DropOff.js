@@ -52,7 +52,7 @@ export default function DropOff() {
                         <FormStep step={formStep} />
                         <div>
                             {formStep < 2 ? <Button id="med-button--red" type="button" onClick={() => setFormStep(formStep + 1)}>Next</Button> : null}
-                            {formStep === 3 ? <Button id="med-button--red" type="submit">Submit</Button> : null}
+                            {formStep === 2 ? <div className="button-placeholder"></div> : null}
                         </div>
                     </motion.div>
                 </form>

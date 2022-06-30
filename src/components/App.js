@@ -19,7 +19,7 @@ export function App() {
         }, 2200)
     }, [])
 
-
+    
     return (
         <>
             {loading ?

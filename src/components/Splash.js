@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { splashFadeOut, splashImg } from '../lib/useAnimation';
 
 
-
 export default function Splash() {
 
     return (

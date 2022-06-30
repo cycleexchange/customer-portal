@@ -7,7 +7,6 @@ export default function Email({ fadeIn, email, currentEmail, handleChange, formS
 
     const [showInput, setShowInput] = React.useState(false)
 
-
     return (
         <motion.div className="question__wrap" variants={fadeIn} initial="initial" animate="animate">
             <p className="body__text">Can we still email you on {currentEmail}?</p>

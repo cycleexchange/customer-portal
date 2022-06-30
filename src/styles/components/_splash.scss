@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     .splash__img {
         width: clamp(200px, 30%, 500px);

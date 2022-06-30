@@ -13,7 +13,7 @@
         flex-direction: column;
 
         .body__text {
-            font-size: calc($fs-body - 0.35rem);
+            font-size: calc($fs-body - 0.25rem);
         }
     }
 
@@ -22,6 +22,6 @@
     }
 
     img {
-        width: clamp(130px, 100%, 250px);
+        width: clamp(80px, 100%, 250px);
     }
 }

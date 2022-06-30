@@ -5,8 +5,7 @@ import Phone from './Phone.js';
 import Terms from './Terms.js';
 
 
-export default function CollectForm({ fadeAnimation, email, currentEmail, phone, address, handleChange, formStep, setFormStep }) {
-
+export default function CollectForm({ fadeAnimation, email, currentEmail, phone, address, town, postcode, handleChange, formStep, setFormStep }) {
 
     switch (formStep) {
         case 1:
@@ -33,8 +32,8 @@ export default function CollectForm({ fadeAnimation, email, currentEmail, phone,
                 <Address
                     fadeIn={fadeAnimation}
                     address={address}
-                    // town={formInput.town}
-                    // postcode={formInput.postcode}
+                    town={town}
+                    postcode={postcode}
                     handleChange={handleChange} />
             )
         case 4:

@@ -91,6 +91,11 @@
                     transform: translateY(-2em);
                 }
             }
+
+            .button-placeholder {
+                width: clamp(5em, 6vw, 14em);
+                height: 2.5em;
+            }
         }
 
         .large-input,

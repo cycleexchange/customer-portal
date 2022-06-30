@@ -1,7 +1,8 @@
 const base = require('./airtable.config');
-
+const postcodes = require('./postcodes.js');
 
 require('dotenv').config()
+
 const TABLE_ID = process.env.TABLE_ID
 
 
@@ -26,20 +27,6 @@ const customer = {
   phone: ""
 }
 
-
-// const product = {
-//   id: "",
-//   customerName: "",
-//   name: "",
-//   quote: 0,
-// }
-
-// const customer = {
-//   id: "",
-//   name: "",
-//   email: "",
-//   address: "",
-// }
 
 function loadProduct(req) {
   base(TABLE_ID).find(req.params.id,
@@ -73,25 +60,52 @@ function loadCustomer(req) {
     })
 }
 
+
 function updateCustomer(req, res) {
-  base(TABLE_ID).update([{
-    "id": req.params.id,
-    "fields": {
-      "Email": req.body.email,
-      "Customer Collection Address": req.body.address,
-      "Customer Collection Town": req.body.town,
-      "Customer Collection Postcode": req.body.postcode,
-      "Customer Phone Number": req.body.phone
-    }
-  }],
-    (err, records) => {
+  base(TABLE_ID).find(req.params.id,
+    (err, record) => {
       if (err) { console.error(err); return; }
-      records.forEach((record) => {
-        customer.id = record.get("ID")
-        console.log(`Record ${customer.id} updated`)
-      })
-    }
-  )
+
+      const productType = record.get("Type Of Product")
+      const postcode = req.body.postcode
+      let matchingPostcode = false
+      postcodes.forEach(e => { if (postcode.includes(e)) { matchingPostcode = true } })
+
+      if (productType === "Full Bike" && matchingPostcode) {
+        console.log("yep")
+
+        base(TABLE_ID).update([{
+          "id": req.params.id,
+          "fields": { "Status": "Accepted (Flamme Rouge)" }
+        }],
+          (err) => {
+            if (err) { console.error(err); return; }
+          }
+        )
+      } 
+      else {
+        console.log("nah")
+
+        base(TABLE_ID).update([{
+          "id": req.params.id,
+          "fields": { "Status": "Accepted (Post)" }
+        }],
+          (err) => {
+            if (err) { console.error(err); return; }
+          }
+        )
+      }
+      base(TABLE_ID).update([{
+        "id": req.params.id,
+        "fields": {
+          "Email": req.body.email,
+          "Customer Collection Address": req.body.address,
+          "Customer Collection Town": req.body.town,
+          "Customer Collection Postcode": req.body.postcode,
+          "Customer Phone Number": req.body.phone
+        }
+      }])
+    })
 }
 
 

@@ -6,27 +6,34 @@ import ScheduleFlammeRouge from './ScheduleFlammeRouge.js'
 
 export default function Schedule({ fadeAnimation, location }) {
 
-      switch (location) {
-        case "Cycle Exchange Kingston":
-          return (
-            <ScheduleCycleExchange
-              fadeIn={fadeAnimation}
-              location={location}
-            />
-          )
-          case "Fettle Hyde Park":
-            return (
-            <ScheduleFettle
-              fadeIn={fadeAnimation}
-              location={location}
-            />
-          )
-          case "Flamme Rouge Bedford":
-            return (
-            <ScheduleFlammeRouge
-              fadeIn={fadeAnimation}
-              location={location}
-            />
-          )
-      }
+  const calendlyEmbedStyles = {
+    height: "1200px"
+}
+
+  switch (location) {
+    case "Cycle Exchange Kingston":
+      return (
+        <ScheduleCycleExchange
+          styles={calendlyEmbedStyles}
+          fadeIn={fadeAnimation}
+          location={location}
+        />
+      )
+    case "Fettle Hyde Park":
+      return (
+        <ScheduleFettle
+          styles={calendlyEmbedStyles}
+          fadeIn={fadeAnimation}
+          location={location}
+        />
+      )
+    case "Flamme Rouge Bedford":
+      return (
+        <ScheduleFlammeRouge
+          styles={calendlyEmbedStyles}
+          fadeIn={fadeAnimation}
+          location={location}
+        />
+      )
+  }
 }
