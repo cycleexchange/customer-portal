@@ -4,7 +4,7 @@ import { InlineWidget } from "react-calendly";
 
 
 
-export default function ScheduleCycleExchange({ fadeIn, location, styles }) {
+export default function ScheduleCycleExchange({ styles }) {
 
   return (
     <div className="calendly__wrap">

@@ -1,13 +1,14 @@
 const base = require('./airtable.config');
 const postcodes = require('./postcodes.js');
 
+
 require('dotenv').config()
 
 const TABLE_ID = process.env.TABLE_ID
 
 
 const product = {
-  id: "default",
+  id: "",
   quoteID: "",
   customerName: "",
   brand: "",
@@ -76,26 +77,22 @@ function updateCustomerCollection(req, res) {
           "id": req.params.id,
           "fields": { "Status": "Accepted (Flamme Rouge)" }
         }],
-          (err) => {
-            if (err) { console.error(err); return; }
-          }
+          (err) => { if (err) { console.error(err); return; } }
         )
-      } 
+      }
       else {
         base(TABLE_ID).update([{
           "id": req.params.id,
           "fields": { "Status": "Accepted (Post)" }
         }],
-          (err) => {
-            if (err) { console.error(err); return; }
-          }
+          (err) => { if (err) { console.error(err); return; } }
         )
       }
 
       base(TABLE_ID).update([{
         "id": req.params.id,
         "fields": {
-          "Drop Off/Collection" : "Collection", 
+          "Drop Off/Collection": "Collection",
           "Email": req.body.email,
           "Customer Collection Address": req.body.address,
           "Customer Collection Town": req.body.town,

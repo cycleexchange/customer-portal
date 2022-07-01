@@ -81,7 +81,7 @@ export default function Collect() {
                                 <div>
                                     {formStep < 4 ? <Button id="med-button--red" type="button" onClick={() => setFormStep(formStep + 1)}>Next</Button> : null}
                                     {formStep === 4 ?
-                                        formInput.address && formInput.phone ?
+                                        formInput.phone && formInput.address && formInput.town && formInput.postcode ?
                                             <Button id="med-button--red" type="submit">Submit</Button>
                                             : <Button disabled id="med-button--red--disabled" type="submit">Submit</Button>
                                         : null}

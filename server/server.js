@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const { product, customer, loadProduct, loadCustomer, updateCustomerCollection } = require('./modules/controller.js');
 
+
 require('dotenv').config();
 
 const port = process.env.PORT;

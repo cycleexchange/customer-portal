@@ -29,7 +29,7 @@
             margin: clamp(4em, 5vw, 10em) 0px;
             border: none;
             border-bottom: solid 2px black;
-            font-family: HafferRegular, sans-serif;
+            font-family: inherit;
             font-size: $fs-body;
             cursor: pointer;
         }
