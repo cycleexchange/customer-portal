@@ -61,7 +61,6 @@ export default function Collect() {
                         }}>
                             <CollectForm
                                 fadeAnimation={fadeIn}
-                                customerName={customerData.name}
                                 currentEmail={customerData.email}
                                 email={formInput.email}
                                 phone={formInput.phone}
@@ -93,6 +92,7 @@ export default function Collect() {
                 :
                 <motion.div className="form__container" variants={fadeIn} initial="initial" animate="animate">
                     <Success
+                        fadeAnimation={fadeIn}
                         customerName={customerData.name}
                         currentEmail={customerData.email}
                         email={formInput.email}

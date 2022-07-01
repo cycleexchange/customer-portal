@@ -1,7 +1,5 @@
 import React from 'react';
-import { motion } from "framer-motion";
 import { InlineWidget } from "react-calendly";
-
 
 
 export default function ScheduleCycleExchange({ styles }) {
