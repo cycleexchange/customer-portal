@@ -69,7 +69,7 @@ function updateCustomerCollection(req, res) {
       const productType = record.get("Type Of Product")
       const postcode = req.body.postcode
       let matchingPostcode = false
-      postcodes.forEach(e => { if (postcode.includes(e)) { matchingPostcode = true } })
+      postcodes.forEach(e => { if (postcode.toUpperCase().includes(e)) { matchingPostcode = true } })
 
       if (productType === "Full Bike" && matchingPostcode) {
         base(TABLE_ID).update([{
@@ -91,6 +91,7 @@ function updateCustomerCollection(req, res) {
           }
         )
       }
+
       base(TABLE_ID).update([{
         "id": req.params.id,
         "fields": {
