@@ -10,6 +10,18 @@
     width: clamp(200px, 20vw, 280px);
     height: 2.5em;
     border-radius: 10px;
+
+    &--contact {
+        font-family: RzaRegular, sans-serif;
+        font-size: calc($fs-button + 0.2rem);
+        text-transform: none;
+        letter-spacing: normal;
+        background-color: $main-red;
+        color: white;
+        width: clamp(150px, 11vw, 175px);
+        height: 2.5em;
+        border-radius: 10px;
+    }
 }
 
 #med-button--red {
@@ -48,4 +60,3 @@
     height: 2.5em;
     border-radius: 10px;
 }
-

@@ -29,7 +29,7 @@ app.get("/productdata/:id", (req, res) => {
 
             const product = {
                 id: record.get("RecordID"),
-                quoteID: "",
+                status: record.get("Status"),
                 customerName: record.get("Name"),
                 brand: record.get("Brand"),
                 modelSpec: record.get("Model & Spec"),

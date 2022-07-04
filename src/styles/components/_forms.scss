@@ -3,7 +3,8 @@
     width: $app-width;
 
     @media (max-width: 600px) {
-        margin: 5em 0 0 0;;
+        margin: 5em 0 0 0;
+        ;
     }
 
     .form__step {
@@ -14,6 +15,10 @@
             color: $main-red;
             text-align: center;
         }
+    }
+
+    .confirmation__wrap {
+        margin: 1em auto;
     }
 
     .form__window {

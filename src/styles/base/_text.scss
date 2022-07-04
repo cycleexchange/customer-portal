@@ -24,9 +24,10 @@ p {
     line-height: 1.5em;
 }
 
-h2,
+h2, h4,
 button,
-.form__step p {
+.form__step p 
+{
     font-family: RzaRegular, sans-serif;
     letter-spacing: normal;
 }
@@ -40,6 +41,27 @@ a {
     }
 }
 
+.head__text {
+    margin: 0 0 2em 0;
+
+    &--red {
+        font-size: calc($fs-body-large + 0.4rem);
+        color: $main-red;
+        margin: 0 0 1.5em 0;
+    }
+
+    &--404 {
+        font-size: 7rem;
+        color: $main-red;
+        margin: 0 0 0.1em 0;
+        user-select: none;
+    }
+}
+
 .body__text {
     font-size: $fs-body;
+
+    &--red {
+        color: $main-red;
+    }
 }

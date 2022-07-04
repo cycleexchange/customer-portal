@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './Nav.js';
+import CheckQuoteStatus from './CheckQuoteStatus.js';
 import Footer from './Footer.js';
-import Start from './Start.js';
 import Collect from './Collect.js';
 import DropOff from './DropOff.js';
 import Splash from './Splash.js';
+import _404 from './_404.js';
 import '../styles/app.scss';
 
 
@@ -29,15 +30,15 @@ export function App() {
                     <Nav />
                     <Router>
                         <Routes>
-                            <Route path="/:id" element={<Start />} />
+                            <Route path="/:id" element={<CheckQuoteStatus />} />
                             <Route path="/:id/collect" element={<Collect />} />
                             <Route path="/:id/dropoff" element={<DropOff />} />
+                            <Route path="/" element={<_404 />} />
                         </Routes>
                     </Router>
                     <Footer />
                 </div>
             }
         </>
-
     )
 }
