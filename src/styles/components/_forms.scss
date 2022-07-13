@@ -28,15 +28,35 @@
         flex-direction: column;
         justify-content: center;
 
-        select {
+        .select__wrap {
             width: fit-content;
-            padding: 0.7em 0.7em 0.7em 0;
-            margin: clamp(4em, 5vw, 10em) 0px;
-            border: none;
-            border-bottom: solid 2px black;
-            font-family: inherit;
-            font-size: $fs-body;
-            cursor: pointer;
+            display: flex;
+
+            select {
+                width: 13em;
+                padding: 0.7em 0.7em 0.7em 0;
+                margin: clamp(4em, 5vw, 10em) 0px;
+                border: none;
+                border-bottom: solid 2px black;
+                font-family: inherit;
+                font-size: $fs-body;
+                cursor: pointer;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -ms-appearance: none;
+                appearance: none;
+            }
+
+            &::after {
+                content: "";
+                width: 0.6em;
+                height: 0.4em;
+                background-color: black;
+                display: block;
+                position: absolute;
+                clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+                transform: translateX(12em) translateY(clamp(5.2em, 6.1vw, 10.7em));
+            }
         }
 
         .question__wrap {
