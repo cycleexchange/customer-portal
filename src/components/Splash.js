@@ -7,7 +7,7 @@ export default function Splash() {
 
     return (
         <motion.div className="splash__container" variants={splashFadeOut} initial="initial" animate="animate">
-             <div className="splash__img"><motion.img variants={splashImg} initial="initial" animate="animate" src={require("../assets/ce-logo-white.png")}></motion.img></div>
+             <div className="splash__img"><motion.img variants={splashImg} initial="initial" animate="animate" src={require("../assets/ce-logo-white.webp")}></motion.img></div>
         </motion.div>
     )
 }

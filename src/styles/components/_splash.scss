@@ -12,5 +12,9 @@
         width: clamp(200px, 30%, 500px);
         display: flex;
         justify-content: center;
+    
+        @media(max-width: 770px) {
+            transform: translateY(-28px)
+        }
     }
 }
